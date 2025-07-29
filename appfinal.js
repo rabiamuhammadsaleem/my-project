@@ -154,33 +154,33 @@
 
 // // Google login
 // Google login
-const loginWithGoogle = document.getElementById('loginWithGoogle');
+// const loginWithGoogle = document.getElementById('loginWithGoogle');
 
-loginWithGoogle && loginWithGoogle.addEventListener('click', async () => {
-  try {
-    const redirectTo =
-      window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost'
-        ? 'http://127.0.0.1:5500/post.html'
-        : 'https://rabiamuhammadsaleem.github.io/my-project/post.html';
+// loginWithGoogle && loginWithGoogle.addEventListener('click', async () => {
+//   try {
+//     const redirectTo =
+//       window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost'
+//         ? 'http://127.0.0.1:5500/post.html'
+//         : 'https://rabiamuhammadsaleem.github.io/my-project/post.html';
 
-    showLoader(); // tumhara custom loader function
+//     showLoader(); // tumhara custom loader function
 
-    const { error } = await client.auth.signInWithOAuth({
-      provider: 'google',
-      options: {
-        redirectTo: redirectTo,
-      },
-    });
+//     const { error } = await client.auth.signInWithOAuth({
+//       provider: 'google',
+//       options: {
+//         redirectTo: redirectTo,
+//       },
+//     });
 
-    if (error) throw error;
-  } catch (err) {
-    showAlert({
-      icon: 'error',
-      title: 'Login Failed',
-      text: err.message,
-    });
-  }
-});
+//     if (error) throw error;
+//   } catch (err) {
+//     showAlert({
+//       icon: 'error',
+//       title: 'Login Failed',
+//       text: err.message,
+//     });
+//   }
+// });
 
 
 // // Github login
@@ -680,74 +680,63 @@ loginBtn && loginBtn.addEventListener('click', async () => {
   }
 });
 
-// // Google login
+// Google login
+const loginWithGoogle = document.getElementById('loginWithGoogle');
+
+loginWithGoogle && loginWithGoogle.addEventListener('click', async () => {
+  try {
+    const redirectTo =
+      window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost'
+        ? 'http://127.0.0.1:5500/post.html'
+        : 'https://rabiamuhammadsaleem.github.io/my-project/post.html';
+
+    showLoader(); // tumhara custom loader function
+
+    const { error } = await client.auth.signInWithOAuth({
+      provider: 'google',
+      options: {
+        redirectTo: redirectTo,
+      },
+    });
+
+    if (error) throw error;
+  } catch (err) {
+    showAlert({
+      icon: 'error',
+      title: 'Login Failed',
+      text: err.message,
+    });
+  }
+});
 // const loginWithGoogle = document.getElementById('loginWithGoogle');
 // loginWithGoogle && loginWithGoogle.addEventListener('click', async () => {
 //   try {
-//     showLoader();
+//     const redirectTo = window.location.hostname === '127.0.0.1'
+//     ? window.Location.origin + '/post.html'
+//     : window.Location.origin + '/signup/post.html'
+
+//       showLoader();
 //     const { error } = await client.auth.signInWithOAuth({
-//       provider: 'google',
-//       options: {
-//         redirectTo: window.location.origin + '/post.html',
-//         queryParams: { access_type: 'offline', prompt: 'consent' },
-//       },
-//     });
-//     if (error) throw error;
+//   provider: 'google',
+//   options: {
+//     redirectTo: redirectTo,
+//     queryParams: { access_type: 'offline', prompt: 'consent' },
+//   },
+// });
+//    if (error) throw error;
 //   } catch (error) {
 //     console.error('Google login error:', error);
-//     alert(error.message || 'Google login failed');
+//     Swal.fire({
+//       icon: 'error',
+//       title: 'Google Login Failed',
+//       text: error.message || 'Failed to login with Google',
+//       confirmButtonColor: '#d33'
+//     });
 //     hideLoader();
 //   }
 // });
 
-// Google login
-const loginWithGoogle = document.getElementById('loginWithGoogle');
-loginWithGoogle && loginWithGoogle.addEventListener('click', async () => {
-  try {
-    const redirectTo = window.location.hostname === '127.0.0.1'
-    ? window.Location.origin + '/post.html'
-    : window.Location.origin + '/signup/post.html'
 
-      showLoader();
-    const { error } = await client.auth.signInWithOAuth({
-  provider: 'google',
-  options: {
-    redirectTo: redirectTo,
-    queryParams: { access_type: 'offline', prompt: 'consent' },
-  },
-});
-   if (error) throw error;
-  } catch (error) {
-    console.error('Google login error:', error);
-    Swal.fire({
-      icon: 'error',
-      title: 'Google Login Failed',
-      text: error.message || 'Failed to login with Google',
-      confirmButtonColor: '#d33'
-    });
-    hideLoader();
-  }
-});
-
-//     showLoader();
-//     const { error } = await client.auth.signInWithOAuth({
-//   provider: 'google',
-//   options: {
-//     redirectTo: 'https://rabiamuhammadsaleem.github.io/signup/post.html',
-//     queryParams: { access_type: 'offline', prompt: 'consent' },
-//   },
-// });
-
-    // const { error } = await client.auth.signInWithOAuth({
-    //   provider: 'google',
-    //   options: {
-    //     //  redirectTo: 'rabiamuhammadsaleem.github.io/signup/post.html',
-    //     // redirectTo:redirectTo,
-    //      redirectTo: window.location + 'https://rabiamuhammadsaleem.github.io/signup/post.html',
-    //     queryParams: { access_type: 'offline', prompt: 'consent' },
-    //   },
-    // });
-//  
 
 // Github login
 const loginWithGithub = document.getElementById('loginWithGithub');
