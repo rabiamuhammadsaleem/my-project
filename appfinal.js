@@ -161,7 +161,7 @@ loginWithGoogle && loginWithGoogle.addEventListener('click', async () => {
     const redirectTo =
       window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost'
         ? 'http://127.0.0.1:5500/post.html'
-        : 'https://rabiamuhammadsaleem.github.io/signup/post.html';
+        : 'https://rabiamuhammadsaleem.github.io/my-project/post.html';
 
     showLoader(); // tumhara custom loader function
 
